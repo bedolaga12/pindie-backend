@@ -45,4 +45,15 @@ const updateGame = async (req, res, next) => {
     res.status(400).send(JSON.stringify({ message: "Ошибка обновления игры" }));
   }
 }; 
-module.exports = {findAllGames, createGame, findGameById, updateGame};
+
+const deleteGame = async (req, res, next) => {
+  try {
+    req.game = await games.findByIdAndDelete(req.params.id);
+    next();
+  } catch (error) {
+    res.setHeader("Content-Type", "application/json");
+        res.status(400).send(JSON.stringify({ message: "Ошибка удаления игры" }));
+  }
+}; 
+
+module.exports = {findAllGames, createGame, findGameById, updateGame, deleteGame};
