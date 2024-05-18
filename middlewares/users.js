@@ -38,6 +38,9 @@ const updateUser = async (req, res, next) => {
   }
 }; 
 
+
+
+
 const deleteUser = async (req, res, next) => {
   try {
     req.user = await users.findByIdAndDelete(req.params.id);
@@ -48,4 +51,9 @@ const deleteUser = async (req, res, next) => {
   }
 }; 
 
-module.exports = { findAllUsers, createUser, findUserById, updateUser, deleteUser };
+
+
+
+
+module.exports = { findAllUsers, createUser, findUserById, updateUser, deleteUser,
+ };
