@@ -8,7 +8,7 @@ const connectToDatabase = require('./database/connect');
 const apiRouter = require('./routes/apiRouter');
 
 const app = express();
-const PORT = 3005;
+const PORT = 3001;
 
 connectToDatabase();
 
